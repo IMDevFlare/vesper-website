@@ -3,16 +3,15 @@
 @theme {
   --color-vesper-black: #000000;
   --color-vesper-charcoal: #050505;
-  --color-vesper-glow: #10B981;
-  --color-vesper-highlight-start: #fbd38d; /* orange-200 equivalent */
-  --color-vesper-highlight-end: #f59e0b; /* amber-500 equivalent */
+  --color-vesper-copper-start: #FFD194;
+  --color-vesper-copper-end: #D1913C;
 
   --font-sans: "Inter", var(--font-geist-sans), sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+  --font-mono: "JetBrains Mono", var(--font-geist-mono), monospace;
 }
 
 :root {
-  --background: var(--color-vesper-charcoal);
+  --background: var(--color-vesper-black);
   --foreground: #ffffff;
 }
 
@@ -25,19 +24,19 @@ body {
   user-select: none;
 }
 
-@utility vesper-halo {
-  box-shadow: 0 0 60px -15px rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
 @utility text-gradient {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, var(--color-vesper-highlight-start), var(--color-vesper-highlight-end));
+  background-image: linear-gradient(to right, var(--color-vesper-copper-start), var(--color-vesper-copper-end));
+}
+
+@utility vesper-halo {
+  box-shadow: 0 0 60px -15px rgba(209, 145, 60, 0.15); /* Soft copper glow */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* very subtle white border instead of green */
 }
 
 @utility bg-surface {
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.03); /* subtle dark gray */
+  border: 1px solid theme('colors.gray.800'); /* requested 1px gray-800 border */
 }
