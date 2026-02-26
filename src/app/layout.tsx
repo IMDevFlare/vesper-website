@@ -1,15 +1,33 @@
 import type { Metadata } from "next";
-import { Inter, Fira_Code } from "next/font/google";
+import localFont from "next/font/local";
+import { JetBrains_Mono as FontMono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+// const fontSans = localFont({
+//   src: [
+//     {
+//       path: "./fonts/satoshi.woff2",
+//       style: "normal",
+//       weight: "400",
+//     },
+//     {
+//       path: "./fonts/satoshi-italic.woff2",
+//       style: "italic",
+//       weight: "400",
+//     },
+//   ],
+//   variable: "--font-v-sans",
+//   display: "swap",
+// });
+
+const fontSans = FontMono({
+  variable: "--font-v-sans",
   subsets: ["latin"],
 });
 
-const firaCode = Fira_Code({
-  variable: "--font-fira-code",
+const fontMono = FontMono({
+  variable: "--font-v-mono",
   subsets: ["latin"],
 });
 
@@ -29,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${firaCode.variable} font-sans antialiased`}
+        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}

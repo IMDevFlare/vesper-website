@@ -63,18 +63,18 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 z-[60]">
-          <CommandLineIcon className="w-6 h-6 text-accent" />
+          <CommandLineIcon className="w-6 h-6 text-brand-accent" />
           <span className="font-mono font-bold tracking-tight text-foreground">Vesper.init()</span>
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-sm font-medium hover:text-accent transition-colors">Features</a>
-          <a href="#system" className="text-sm font-medium hover:text-accent transition-colors">Requirements</a>
+          <a href="#features" className="text-sm font-medium hover:text-brand-accent transition-colors">Features</a>
+          <a href="#system" className="text-sm font-medium hover:text-brand-accent transition-colors">Requirements</a>
           <button
             onClick={handleDownload}
             disabled={isDownloading}
-            className="px-5 py-2 bg-accent text-background text-sm font-bold rounded-full hover:scale-105 transition-transform disabled:opacity-50"
+            className="px-5 py-2 bg-brand-accent text-background text-sm font-bold rounded-full hover:scale-105 transition-transform disabled:opacity-50"
           >
             {isDownloading ? "..." : "Download"}
           </button>
@@ -111,9 +111,9 @@ export function Navigation() {
                     <a
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between p-4 rounded-xl bg-accent/5 border border-border/50 text-lg font-semibold"
+                      className="flex items-center justify-between p-4 rounded-xl bg-brand-accent/5 border border-border/50 text-lg font-semibold"
                     >
-                      {link.name} <ChevronRightIcon className="w-5 h-5 text-accent" />
+                      {link.name} <ChevronRightIcon className="w-5 h-5 text-brand-accent" />
                     </a>
                   </motion.div>
                 ))}
@@ -122,7 +122,7 @@ export function Navigation() {
                   <button
                     onClick={handleDownload}
                     disabled={isDownloading}
-                    className="w-full p-4 bg-accent text-background rounded-xl font-bold text-lg flex items-center justify-center gap-3 active:scale-[0.98] transition-transform"
+                    className="w-full p-4 bg-brand-accent text-background rounded-xl font-bold text-lg flex items-center justify-center gap-3 active:scale-[0.98] transition-transform"
                   >
                     {isDownloading ? (
                       <>

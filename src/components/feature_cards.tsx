@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { 
   BoltIcon, 
@@ -52,10 +50,10 @@ export function FeatureCards() {
               feature.className
             )}
           >
-            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-accent/20 group-hover:bg-accent transition-colors" />
+            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-brand-accent/20 group-hover:bg-brand-accent transition-colors" />
             
             <div className="flex flex-col h-full justify-between relative z-10">
-              <feature.icon className="w-8 h-8 text-accent/80 mb-4" />
+              <feature.icon className="w-8 h-8 text-brand-accent/80 mb-4" />
               <div>
                 <h3 className="text-xl font-mono font-semibold text-foreground mb-2 tracking-tight">
                   {feature.title}

@@ -6,10 +6,11 @@ import { FeatureCards } from "../components/feature_cards";
 import { SystemRequirements } from "../components/SystemRequirements";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative overflow-hidden flex flex-col selection:bg-accent/30 selection:text-accent">
+    <div className="min-h-screen relative overflow-hidden flex flex-col selection:bg-brand-accent/30 selection:text-brand-accent">
       {/* Subtle Dot Grid Background */}
       <div className="fixed inset-0 z-[-2] bg-background" />
       <div
@@ -22,7 +23,7 @@ export default function Home() {
       />
 
       {/* Vesper Ambient Glow */}
-      <div className="fixed top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[150px] -z-10 pointer-events-none" />
+      <div className="fixed top-0 left-1/4 w-96 h-96 bg-brand-accent/5 rounded-full blur-[150px] -z-10 pointer-events-none" />
 
       <SpeedInsights />
       <Analytics />
@@ -34,15 +35,7 @@ export default function Home() {
         <SystemRequirements />
       </main>
 
-      <footer className="py-8 text-center text-sm text-muted-foreground border-t border-border/50 bg-muted/10 backdrop-blur-sm mt-10">
-        <div className="max-w-7xl mx-auto px-6 font-mono flex items-center justify-between">
-          <p>© {new Date().getFullYear()} Vesper.init()</p>
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#00FF41] animate-pulse" />
-            <span>Auth Services Online</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
