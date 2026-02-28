@@ -40,7 +40,7 @@ export function Footer({
   return (
     <footer
       className={cn(footerVariants({ variant, padding, className }))}
-      {...props}
+      {...props} id="footer"
     >
       <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col gap-4 items-center sm:flex-row sm:justify-between sm:items-center font-mono text-xs text-muted-foreground">
         <span className="block text-center sm:text-left">

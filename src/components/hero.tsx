@@ -5,7 +5,7 @@ import { CheckCircleIcon, ArrowDownTrayIcon, ExclamationTriangleIcon } from "@he
 
 export function Hero() {
   return (
-    <section className="relative pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col items-center justify-center min-h-[70vh]">
+    <section className="relative pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col items-center justify-center min-h-[70vh]" id="hero">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-64 bg-brand-accent/5 rounded-full blur-[120px] -z-10" />
 
       <motion.div
