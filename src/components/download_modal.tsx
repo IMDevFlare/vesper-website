@@ -67,32 +67,32 @@ const platforms = [
     {
         label: "Windows (.exe)",
         match: (name: string) => name.endsWith(".exe"),
-        fallbackUrl: "https://github.com/IMDevFlare/vesper-launcher/releases/latest",
+        fallbackUrl: "https://github.com/IMDevFlare/vesper-client/releases/latest",
         icon: WindowsIcon,
     },
     {
         label: "Mac (.dmg)",
         match: (name: string) => name.endsWith(".dmg"),
-        fallbackUrl: "https://github.com/IMDevFlare/vesper-launcher/releases/latest",
+        fallbackUrl: "https://github.com/IMDevFlare/vesper-client/releases/latest",
         icon: MacIcon,
     },
     // Linux options:
     {
         label: "Linux (.deb) Debian / Ubuntu",
         match: (name: string) => name.toLowerCase().endsWith(".deb"),
-        fallbackUrl: "https://github.com/IMDevFlare/vesper-launcher/releases/latest",
+        fallbackUrl: "https://github.com/IMDevFlare/vesper-client/releases/latest",
         // icon: UbuntuIcon,
     },
     {
         label: "Linux (.rpm) Fedora / RedHat",
         match: (name: string) => name.toLowerCase().endsWith(".rpm"),
-        fallbackUrl: "https://github.com/IMDevFlare/vesper-launcher/releases/latest",
+        fallbackUrl: "https://github.com/IMDevFlare/vesper-client/releases/latest",
         icon: RedHatIcon,
     },
     {
         label: "Linux (.AppImage) Universal",
         match: (name: string) => name.toLowerCase().includes("appimage"),
-        fallbackUrl: "https://github.com/IMDevFlare/vesper-launcher/releases/latest",
+        fallbackUrl: "https://github.com/IMDevFlare/vesper-client/releases/latest",
         icon: LinuxIcon,
     },
 ];
@@ -105,7 +105,7 @@ const DownloadModal: React.FC<DownloadModalProps> = ({ open, onClose }) => {
         setDownloading((d) => ({ ...d, [platformIdx]: true }));
         setError("");
         try {
-            const res = await fetch("https://api.github.com/repos/IMDevFlare/vesper-launcher/releases/latest");
+            const res = await fetch("https://api.github.com/repos/IMDevFlare/vesper-client/releases/latest");
             const data = (await res.json()) as GitHubRelease;
             const platform = platforms[platformIdx];
             const asset = data.assets?.find(a => platform.match(a.name));
