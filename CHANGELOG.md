@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.4.0] - 2026-06-28
+
+### Added
+
+- Changed the Download button in the navbar to open a modal.
+- Added a button to the navbar that redirects to the website's GitHub repository.
+
 ## [1.3.0] - 2026-06-28
 
 ### Added

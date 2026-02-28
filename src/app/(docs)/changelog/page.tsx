@@ -6,6 +6,25 @@ import React from "react";
 // Change log data as a structured JS object instead of markdown
 const changelog = [
   {
+    version: "1.4.0",
+    date: "2026-06-28",
+    changes: [
+      {
+        type: "Added",
+        items: [
+          "Introduced DownloadModal for easy, direct downloads of desktop client builds for Windows (.exe), Mac (.dmg), Debian/Ubuntu (.deb), Fedora/RedHat (.rpm), and Linux Universal (.AppImage). The modal fetches the latest GitHub release via the Releases API and adapts to available files.",
+          "Platform-specific SVG icons for each OS/platform appear on download buttons.",
+        ],
+      },
+      {
+        type: "Improved",
+        items: [
+          "Added a GitHub button to the navbar for quick access to the website's repository.",
+        ],
+      },
+    ],
+  },
+  {
     version: "1.3.0",
     date: "2026-06-28",
     changes: [
