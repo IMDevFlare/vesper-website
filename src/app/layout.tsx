@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Geist as FontSans, JetBrains_Mono as FontMono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { JetBrains_Mono as FontMono, Geist as FontSans } from "next/font/google";
 import "./globals.css";
 
 // const fontSans = localFont({
@@ -24,30 +23,67 @@ import "./globals.css";
 const fontSans = FontSans({
   variable: "--font-v-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const fontMono = FontMono({
   variable: "--font-v-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Vesper Launcher",
-  description: "Sleek and modern high-utility minecraft client",
+  title: {
+    default: "Vesper Launcher",
+    template: "%s | Vesper Launcher"
+  },
+  description: "Vesper Launcher is a sleek, modern, and high-utility Minecraft client designed for performance, customization, and an enhanced gameplay experience.",
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/logo.svg", type: "image/svg+xml" },
+      { url: "/logo.ico", type: "image/x-icon" }
+    ],
+    // apple: "/apple-touch-icon.png"
+  },
+  keywords: [
+    "Minecraft",
+    "Vesper Launcher",
+    "Minecraft Client",
+    "High-Utility",
+    "Modern",
+    "Launcher",
+    "Custom Minecraft"
+  ],
+  authors: [
+    { name: "DevFlare", url: "https://devflare.de" }
+  ],
+  openGraph: {
+    title: "Vesper Launcher",
+    description: "Experience Minecraft with enhanced performance and customization using Vesper Launcher.",
+    url: "https://launcher.devflare.de",
+    siteName: "Vesper Launcher",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1901,
+        height: 943,
+        alt: "Vesper Launcher Preview"
+      }
+    ],
+    locale: "en_US",
+    type: "website"
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
+        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased min-h-screen bg-background text-foreground`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
