@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { FeatureCards } from "../components/feature_cards";
 import { Hero } from "../components/hero";
 import { SystemRequirements } from "../components/system_requirements";
+import FAQ from "@/components/faq";
 
 export default function Home() {
   return (
@@ -25,8 +26,8 @@ export default function Home() {
         <Hero />
         <FeatureCards />
         <SystemRequirements />
+        <FAQ />
       </main>
-
     </div>
   );
 }
