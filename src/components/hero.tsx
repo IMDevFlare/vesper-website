@@ -11,14 +11,23 @@ import {
 import { toast } from "sonner";
 
 const INSTALL_SCRIPT = "curl -sSfL https://vesper.devflare.de/install | sh";
+const DEBUG_COPY_ERROR = false;
 
 export function Hero() {
   const [copyState, setCopyState] = useState<"idle" | "copied" | "error">("idle");
 
   async function handleCopy() {
+    if (DEBUG_COPY_ERROR) {
+      setCopyState("error");
+      toast.error("Failed to copy install script to clipboard.");
+      setTimeout(() => setCopyState("idle"), 2500);
+      return;
+    }
+
     try {
       await navigator.clipboard.writeText(INSTALL_SCRIPT);
       setCopyState("copied");
+      toast.success("Copied install script to clipboard!");
       setTimeout(() => setCopyState("idle"), 1800);
     } catch (e) {
       setCopyState("error");
@@ -90,7 +99,13 @@ export function Hero() {
               ? "bg-destructive border-destructive text-background"
               : "bg-foreground text-background hover:border-brand-accent/40"
             }`}
-          aria-label={copyState === "copied" ? "Copied!" : "Copy install script"}
+          aria-label={
+            copyState === "copied"
+              ? "Copied!"
+              : copyState === "error"
+                ? "Copy failed"
+                : "Copy install script"
+          }
           disabled={copyState === "copied"}
         >
           {copyState === "copied" ? (
