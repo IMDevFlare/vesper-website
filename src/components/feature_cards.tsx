@@ -10,7 +10,7 @@ import { cn } from "../lib/utils";
 const features = [
   {
     title: "Instant Launch",
-    description: "Bypasses unnecessary Electron bloat. Launch your game instantly, directly into the server.",
+    description: "Skip the launcher's delays. Start Minecraft and jump right into your server!",
     icon: BoltIcon,
     className: "col-span-1 md:col-span-2 row-span-2",
   },
@@ -21,8 +21,8 @@ const features = [
     className: "col-span-1",
   },
   {
-    title: "Vesper Aesthetics",
-    description: "A distraction-free, sleek interface built for the modern power user.",
+    title: "Refined Aesthetics",
+    description: "A visually clean, contemporary interface with focus and efficiency at its core.",
     icon: CubeTransparentIcon,
     className: "col-span-1",
   },
@@ -31,6 +31,12 @@ const features = [
     description: "Full Microsoft Authentication flow powered by secure OAuth with zero telemetry tracking.",
     icon: ShieldCheckIcon,
     className: "col-span-1 md:col-span-2",
+  },
+  {
+    title: "Auto Updates",
+    description: "Stay up-to-date with seamless launcher updates, ensuring you always have the latest features and fixes.",
+    icon: BoltIcon,
+    className: "col-span-1",
   },
 ];
 
